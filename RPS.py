@@ -19,16 +19,17 @@ def versus():
     if my_choice == comp_choice:
         print("Draw!")
         print()
-    elif my_choice == 'R' and comp_choice == 'P':
+    elif (my_choice == 'R' and comp_choice == 'P') or (my_choice == 'P' and comp_choice == 'R'):
         print("Paper covers Rock!")
-    elif my_choice == 'R' and comp_choice == 'S':
+    elif (my_choice == 'R' and comp_choice == 'S') or (my_choice == 'S' and comp_choice == 'R'):
         print("Rock crushes Scissors")
-    elif my_choice == 'P' and comp_choice == 'S':
+    elif (my_choice == 'P' and comp_choice == 'S') or (my_choice == 'S' and comp_choice == 'P'):
         print("Scissors cuts Paper")
+
 
 def round_winner():
     global count, comp_choice, my_choice
-    winner = int  # USER
+    winner = int  # 1 = USER, 2 = PYTHON
     if my_choice == comp_choice:
         winner = 0
     elif my_choice == 'R' and comp_choice == 'P':
@@ -52,7 +53,6 @@ def round_winner():
         print()
 
 
-
 print("--------------------------------Welcome to a game of Rock, Paper, Scissors!----------------------------------")
 print("                                     Your choices are: R, P, S")
 while count < 3:
@@ -68,8 +68,5 @@ while count < 3:
     count += 1
     round_winner()
 
-
 else:
     print("The game is over")
-
-
