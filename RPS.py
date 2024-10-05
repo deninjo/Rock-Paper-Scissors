@@ -1,4 +1,5 @@
 import numpy as np
+
 count = 0
 comp_choice = ''
 
@@ -60,8 +61,8 @@ def round_winner():
         print()
 
 
-def ulimate_winner():
-    global winner,my_points, comp_points,count
+def ultimate_winner():
+    global winner, my_points, comp_points, count
     if winner == 1:
         my_points += 1
         comp_points += 0
@@ -77,13 +78,11 @@ def ulimate_winner():
     print()'''
 
 
-
-
 print("--------------------------------Welcome to a game of Rock, Paper, Scissors!----------------------------------")
 print("                                     Your choices are: R, P, S")
 while count < 3:
     computer_choice()
-    my_choice = input("Enter choice: ")
+    my_choice = input("Enter choice: ").strip().upper()
     if my_choice != 'R' and my_choice != 'P' and my_choice != 'S':
         print("Invalid choice!")
         print()
@@ -93,7 +92,7 @@ while count < 3:
     versus()
     count += 1
     round_winner()
-    ulimate_winner()
+    ultimate_winner()
 
     if count == 2 and (my_points == 2 or comp_points == 2):
         if my_points == 2:
